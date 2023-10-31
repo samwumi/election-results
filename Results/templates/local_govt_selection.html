@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Local Government Selection</title>
+</head>
+<body>
+    <h1>Select a Local Government</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="local_government">Local Government:</label>
+        <select name="local_government" id="local_government">
+            {% for lga in local_governments %}
+                <option value="{{ lga.id }}">{{ lga.name }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Show Results">
+    </form>
+    <a href="{% url 'local_government_results' %}">View Results</a>
+
+</body>
+</html>

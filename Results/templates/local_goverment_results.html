@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Local Government Results</title>
+</head>
+<body>
+    <h1>Results for {{ lga.name }}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Party</th>
+                <th>Total Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for party, result in total_results.items %}
+                <tr>
+                    <td>{{ party }}</td>
+                    <td>{{ result }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
